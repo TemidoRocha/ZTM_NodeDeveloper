@@ -1,3 +1,5 @@
+// const launches = require('./launches.mongo');
+
 const launches = new Map();
 
 let latesFlightNumber = 100;
@@ -8,7 +10,7 @@ const launch = {
   rocket: 'Explorer IS1',
   launchDate: new Date('Decembe 27, 2030'),
   target: 'Kepler-442 b',
-  customer: ['NASA', 'ZTM'],
+  customers: ['NASA', 'ZTM'],
   upcoming: true,
   success: true,
 };

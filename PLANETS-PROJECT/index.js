@@ -36,7 +36,7 @@ fs.createReadStream('kepler_data.csv')
     console.log(err);
   })
   .on('end', () => {
-    const planetNames = habitablePlanet.map((planet) => planet.kepler_name);
+    const planetNames = habitablePlanet.map((planet) => planet.keplerName);
     console.log(`
       There are ${habitablePlanet.length} habitable planets:
       ${planetNames}
