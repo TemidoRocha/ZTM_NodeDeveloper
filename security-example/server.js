@@ -10,11 +10,11 @@ const { verify } = require('crypto');
 
 require('dotenv').config();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const config = {
-  GOOGLE_CLIENT_ID: process.env.CLIENT_ID,
-  GOOGLE_CLIENT_SECRET: process.env.CLIENT_SECRET,
+  CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+  CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
   COOKIE_KEY_1: process.env.COOKIE_KEY_1,
   COOKIE_KEY_2: process.env.COOKIE_KEY_2,
 };
@@ -47,8 +47,10 @@ passport.deserializeUser((id, done) => {
 
 const app = express();
 
+// Helmet helps you secure your Express apps by setting various HTTP headers.
 app.use(helmet());
 
+// the cookieSession needs to be initialize befoe passport but after all the checks performed by helmet
 app.use(
   cookieSession({
     name: 'session',
@@ -57,6 +59,8 @@ app.use(
   })
 );
 app.use(passport.initialize());
+
+// this will allow passport to use the serialize and desrialize fn
 app.use(passport.session());
 
 function checkLoggedIn(req, res, next) {
@@ -77,11 +81,15 @@ app.get(
   })
 );
 
+/**
+ * the callback function is given by passport
+ * but without passport we need to do it
+ */
 app.get(
   '/auth/google/callback',
   passport.authenticate('google', {
-    failureRedirect: '/failure',
-    successRedirect: '/',
+    failureRedirect: '/failure', // specifies wich path in case sth wrong when log in
+    successRedirect: '/', // specifies wich path in case log in is success
     session: true,
   }),
   (req, res) => {
