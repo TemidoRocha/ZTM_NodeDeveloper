@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "npm run install --prefix NASA-PROJECT",
-    "build-client": "npm run build-client --prefix NASA-PROJECT"
+    "install-nasa-project": "npm run install --prefix NASA-PROJECT",
+    "build-client-nasa-project": "npm run build-client --prefix NASA-PROJECT",
+    "test-nasa-project": "npm test --prefix NASA-PROJECT"
   },
   "repository": {
     "type": "git",
