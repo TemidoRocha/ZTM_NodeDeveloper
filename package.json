@@ -1,0 +1,21 @@
+{
+  "name": "ztm_nodedeveloper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm run install --prefix NASA-PROJECT",
+    "build-clienT": "npm run build-clienT --prefix NASA-PROJECT"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TemidoRocha/ZTM_NodeDeveloper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TemidoRocha/ZTM_NodeDeveloper/issues"
+  },
+  "homepage": "https://github.com/TemidoRocha/ZTM_NodeDeveloper#readme"
+}
