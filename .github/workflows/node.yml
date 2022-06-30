@@ -26,4 +26,4 @@ jobs:
           mongodb-version: ${{ matrix.mongodb-version }}
       - run: npm run install-nasa-project
       - run: npm run build-client-nasa-project
-      - run: npm test-nasa-project
+      - run: npm run test-nasa-project
