@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install": "npm run install --prefix NASA-PROJECT",
-    "build-clienT": "npm run build-clienT --prefix NASA-PROJECT"
+    "build-client": "npm run build-client --prefix NASA-PROJECT"
   },
   "repository": {
     "type": "git",
